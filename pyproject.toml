@@ -1,1 +1,24 @@
+[project]
+name = "python-aqa-framework"
+version = "1.0.0"
+description = "UI + API automation framework (Playwright + Pytest)"
+requires-python = ">=3.12"
 
+dependencies = [
+    "pytest",
+    "playwright",
+    "requests",
+    "pydantic",
+    "python-dotenv",
+    "loguru",
+    "allure-pytest",
+    "pytest-xdist",
+    "faker"
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-v -s --alluredir=reports/allure-results"
+
+[tool.black]
+line-length = 100
